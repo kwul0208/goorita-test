@@ -46,7 +46,7 @@
     <main class="form-signin">
           <form action="/login" method="post">
             @csrf
-            <h1 class=" mb-3 fw-bormal text-center mb-5">Goorita</h1>
+            <h1 class=" mb-3 fw-bormal text-center mb-5"><a href="/">Goorita</a></h1>
             <h1 class="h3 mb-3 fw-normal">Please login</h1>
         
             <div class="form-floating">
