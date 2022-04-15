@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,4 @@ Route::post('/login', [LoginController::class, 'storeLogin']);
 |--------------------------------------------------------------------------
 |
 */
-Route::get('/dashboard', function(){
-    return 'dashboard';
-});
+Route::get('/dashboard', [DashboardController::class, 'index']);
