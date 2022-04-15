@@ -36,3 +36,4 @@ Route::post('/login', [LoginController::class, 'storeLogin']);
 |
 */
 Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/post', [DashboardController::class, 'postView']);
