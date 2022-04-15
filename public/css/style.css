@@ -1,0 +1,13 @@
+.top-post{
+    background-color: rgb(65, 65, 65);
+}
+
+#wgtmsr {
+    width: 100px !important; 
+    border: solid 1px #999;
+}
+
+
+#wgtmsr option {
+    width: 100px !important;
+}
