@@ -46,5 +46,8 @@ Route::group([
     Route::get('/post/edit/{id}', [DashboardController::class, 'editView']);
     Route::put('/post/edit/{id}', [DashboardController::class, 'editPost']);
     Route::get('/post/detail/{id}', [DashboardController::class, 'detail']);
+
+    Route::get('/logout', [LoginController::class, 'logout']);
+
 });
 

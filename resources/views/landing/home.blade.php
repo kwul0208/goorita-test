@@ -32,5 +32,9 @@
     </div>
   
 </main>
-
+@if (session()->has('success'))
+  <script>
+  alert('succes logout');
+  </script>
+@endif
 @endsection

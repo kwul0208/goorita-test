@@ -61,7 +61,7 @@
               <a class="btn btn-sm btn-outline-secondary ms-2" href="/login">Login</a>
               @endguest
               @auth
-              <a class="btn btn-sm btn-outline-secondary ms-2" href="/logout">logout</a>
+              <a class="btn btn-sm btn-outline-secondary ms-2" href="/dashboard">Dashboard</a>
               @endauth
             </div>
           </div>
