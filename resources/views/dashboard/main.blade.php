@@ -66,7 +66,7 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="/logout">
               <span data-feather="home"></span>
-              logout
+              Logout
             </a>
           </li>
         </ul>
