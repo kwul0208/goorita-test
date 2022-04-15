@@ -30,9 +30,9 @@
                         <td>{{ $data->sort_description }}</td>
                         <td>{{ date('d-m-Y', strtotime($data->created_at)) }}</td>
                         <td>
-                              <a href=""  class="btn btn-sm btn-primary">View</a>
-                              <a href="/post/{{ $data->id }}"  class="btn btn-sm btn-danger" onclick="return confirm('are you sure?')">delete</a>
-                              <a href="post/edit/{{ $data->id }}"  class="btn btn-sm btn-warning">edit</a>
+                              <a href="/post/detail/{{ $data->id }}"  class="btn btn-sm btn-primary">View</a>
+                              <a href="/post/delete{{ $data->id }}"  class="btn btn-sm btn-danger" onclick="return confirm('are you sure?')">delete</a>
+                              <a href="/post/edit/{{ $data->id }}"  class="btn btn-sm btn-warning">edit</a>
                         </td>
                     </tr>
                 @endforeach

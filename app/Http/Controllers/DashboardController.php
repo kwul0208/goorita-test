@@ -101,4 +101,14 @@ class DashboardController extends Controller
         }
         return redirect('/dashboard')->with('success', 'new post has been updated!');
     }
+
+    public function detail($id)
+    {
+        $data = Post::find($id);
+
+        return view('dashboard.detail', [
+            'title' => 'Detail Post',
+            'data' => $data
+        ]);
+    }
 }
