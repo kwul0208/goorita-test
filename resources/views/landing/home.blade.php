@@ -2,15 +2,33 @@
 @section('landingContainer')
 
 <main class="container">
-
     <div class="row g-5 mt-3">
       <div class="col-md-8">
-          <h3 class="pb-4 mb-4 fst-italic">
+        @if($posts->count())
+          <h3 class="pb-4 mb-4 fst-italic border-bottom">
             Recomended for you
           </h3>
 
-    
-        </div>
+          @foreach($posts as $post)
+              <div class="row border mt-1">
+                <div class="col-4">
+                  <img src="/storage/{{ $post->image }}" alt="" class="img-thumbnail mt-3" width="100%" style="border: 1px solid black">
+                </div>
+                <div class="col-8">
+                    <h3 class="">{{ $post['title'] }}</h3>
+                    <p class="card-text"> by: </a></p>
+                    <p class="card-text">{{ $post['sort_description'] }}</p>
+                    <a href="/posts/{{ $post['slug'] }}" >Continue reading</a>
+                </div>
+              </div>
+          @endforeach
+          <nav class="blog-pagination" aria-label="Pagination">
+        @else
+          <div class="text-center">
+            Post Not Found
+          </div>
+        @endif  
+      </div>
   
       <div class="col-md-4">
         <div class="position-sticky" style="top: 2rem;">
