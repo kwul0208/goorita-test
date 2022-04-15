@@ -38,4 +38,6 @@ Route::post('/login', [LoginController::class, 'storeLogin']);
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/post', [DashboardController::class, 'postView']);
 Route::post('/post', [DashboardController::class, 'postStore']);
-Route::get('/post/{id}', [DashboardController::class, 'deletePost']);
+Route::get('/post/{id}', [DashboardController::class, 'delete']);
+Route::get('/post/edit/{id}', [DashboardController::class, 'editView']);
+Route::put('/post/edit/{id}', [DashboardController::class, 'editPost']);

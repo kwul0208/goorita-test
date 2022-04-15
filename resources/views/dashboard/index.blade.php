@@ -32,7 +32,7 @@
                         <td>
                               <a href=""  class="btn btn-sm btn-primary">View</a>
                               <a href="/post/{{ $data->id }}"  class="btn btn-sm btn-danger" onclick="return confirm('are you sure?')">delete</a>
-                              <a href=""  class="btn btn-sm btn-warning">edit</a>
+                              <a href="post/edit/{{ $data->id }}"  class="btn btn-sm btn-warning">edit</a>
                         </td>
                     </tr>
                 @endforeach
