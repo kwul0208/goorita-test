@@ -12,12 +12,12 @@
       <h2>My Posts</h2>
       <a href="/post" class="btn btn-primary mb-3">Add New Post</a>
       <div class="table-responsive">
-        <table class="table table-striped table">
+        <table class="table table-striped table table-bordered">
           <thead>
-            <tr>
+            <tr style="background-color: #aaa">
               <th scope="col">no</th>
               <th scope="col">Title</th>
-              <th scope="col">Sort Desc</th>
+              <th scope="col" style="width: 50%">Sort Desc</th>
               <th scope="col">Date</th>
               <th scope="col">Action</th>
             </tr>
@@ -28,8 +28,12 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $data->title }}</td>
                         <td>{{ $data->sort_description }}</td>
-                        <td>{{ $data->created_at }}</td>
-                        <td>action</td>
+                        <td>{{ date('d-m-Y', strtotime($data->created_at)) }}</td>
+                        <td>
+                              <a href=""  class="btn btn-sm btn-primary">View</a>
+                              <a href="/post/{{ $data->id }}"  class="btn btn-sm btn-danger" onclick="return confirm('are you sure?')">delete</a>
+                              <a href=""  class="btn btn-sm btn-warning">edit</a>
+                        </td>
                     </tr>
                 @endforeach
           </tbody>

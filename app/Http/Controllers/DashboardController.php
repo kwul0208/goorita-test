@@ -41,11 +41,21 @@ class DashboardController extends Controller
         Post::create([
             'title' => $request->title,
             'slug' => $slug,
-            'sort_description' => Str::limit(strip_tags($request->body), 150, '...'),
+            'sort_description' => Str::limit(strip_tags($request->body), 100, '...'),
             'description' => $request->body,
-            'image' => Storage::disk('local')->put('image',  $request->file('image'))
+            'image' =>  Storage::disk('local')->put('public/image',  $request->file('image'))
         ]);
 
         return redirect('/dashboard')->with('success', 'new post has been created!');
+    }
+
+    // delete
+    public function deletePost($id)
+    {
+        $post = Post::find($id);
+        Storage::delete($post->image);
+        $post->delete();
+
+        return redirect()->back()->with('success', 'post has been deleted!');
     }
 }
