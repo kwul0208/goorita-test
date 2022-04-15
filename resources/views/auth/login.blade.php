@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Login</title>
+    <title>{{ $title }}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/blog/">
 
@@ -44,7 +44,7 @@
   <body>
     
     <main class="form-signin">
-          <form action="/login/storeLogin" method="post">
+          <form action="/login" method="post">
             @csrf
             <h1 class=" mb-3 fw-bormal text-center mb-5">Goorita</h1>
             <h1 class="h3 mb-3 fw-normal">Please login</h1>
@@ -52,16 +52,31 @@
             <div class="form-floating">
               <input type="email" class="form-control @error('email') is-invalid @enderror" id="floatingInput" name="email" placeholder="name@example.com">
               <label for="floatingInput">Email address</label>
+              @error('email')
+                <div class="invalid-feedback">
+                  {{ $message }}
+                </div>
+              @enderror
             </div>
             <div class="form-floating">
               <input type="password" class="form-control @error('password') is-invalid @enderror" id="floatingPassword" name="password" placeholder="Password">
               <label for="floatingPassword">Password</label>
+              @error('password')
+                <div class="invalid-feedback">
+                  {{ $message }}
+                </div>
+              @enderror
             </div>
       
             <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
           </form>
       </main>
-    
+      <p> {{ session()->has('failed')}} xx </p>
+      @if (session()->has('failed'))
+        <script>
+          alert('email or password is wrong!');
+        </script>
+      @endif
   </body>
 </html>
 
