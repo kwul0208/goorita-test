@@ -40,4 +40,13 @@
         </table>
       </div>
     </main>
+
+<script src="{{ asset('assets/bundles/datatables/datatables.min.js') }}"></script>
+<script src="{{ asset('assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('assets/js/datatables.js') }}"></script>
+    <script>
+      $('.table').DataTable({
+        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+      });
+    </script>
 @endsection
