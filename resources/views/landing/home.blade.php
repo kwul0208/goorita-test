@@ -22,12 +22,14 @@
                 </div>
               </div>
           @endforeach
-          <nav class="blog-pagination" aria-label="Pagination">
         @else
           <div class="text-center">
             Post Not Found
           </div>
         @endif  
+        <div class="mt-3">
+      {{ $posts->links() }}
+        </div>
       </div>
   
       <div class="col-md-4">
