@@ -17,7 +17,7 @@
                 <h5>{{ $data->title }}</h5>
                 <img src="/storage/{{ $data->image }}" alt="" style="width:70%;" class="center img-thumbnail mt-3">
                 <div class="container mt-3 mb-5">
-                    <p>{{ $data->description }}</p>
+                    <p>{!! $data->description !!}</p>
                 </div>
             </div>
       </div>

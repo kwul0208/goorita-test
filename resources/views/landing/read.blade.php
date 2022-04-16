@@ -14,7 +14,7 @@
         <div class="col-lg-8">
             <h4 class="text-center">{{ $post->title }}</h4>
             <img src="{{ asset('storage') }}/{{ $post->image }}" alt="" class="img-thumbnail mt-3 center" width="70%">
-            <p class="mt-5">{{ $post->description }}</p>
+            <p class="mt-5">{!! $post->description !!}</p>
         </div>
         
     </div>

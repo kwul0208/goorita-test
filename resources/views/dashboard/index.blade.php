@@ -27,7 +27,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $data->title }}</td>
-                        <td>{{ $data->sort_description }}</td>
+                        <td>{!! $data->sort_description !!}</td>
                         <td>{{ date('d-m-Y', strtotime($data->created_at)) }}</td>
                         <td>
                               <a href="/post/detail/{{ $data->id }}"  class="btn btn-sm btn-primary">View</a>

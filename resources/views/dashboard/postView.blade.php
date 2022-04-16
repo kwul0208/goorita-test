@@ -24,10 +24,8 @@
                         </div>
                         <label for="content">Body</label>
                         <div class="mb-3">
-                            <textarea name="body" id="body" cols="30" rows="10"></textarea>
-                            @error('body')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
+                            <input id="x" type="hidden" name="body">
+                            <trix-editor input="x"></trix-editor>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Save</button>
