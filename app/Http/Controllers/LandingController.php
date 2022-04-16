@@ -16,4 +16,13 @@ class LandingController extends Controller
         ]);
 
     }
+
+    public function read($slug)
+    {
+        $post = Post::where('slug', $slug)->first();
+        return view('landing.read',[
+            'title' => $post->title,
+            'post' => $post 
+        ]);
+    }
 }

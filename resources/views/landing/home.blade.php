@@ -18,7 +18,7 @@
                     <h3 class="">{{ $post['title'] }}</h3>
                     <p class="card-text"> by: </a></p>
                     <p class="card-text">{{ $post['sort_description'] }}</p>
-                    <a href="/posts/{{ $post['slug'] }}" >Continue reading</a>
+                    <a href="post/{{ $post['slug'] }}" >Continue reading</a>
                 </div>
               </div>
           @endforeach
