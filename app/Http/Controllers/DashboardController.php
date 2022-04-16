@@ -12,7 +12,7 @@ class DashboardController extends Controller
     public function index()
     {
         $title = 'dashboard';
-        $datas = Post::all();
+        $datas = Post::all()->sortByDesc('created_at');
         return view('dashboard.index', [
             'title' => $title,
             'datas' => $datas
@@ -41,6 +41,7 @@ class DashboardController extends Controller
         $image = explode('/', $path);
 
         Post::create([
+            'user_id' => auth()->user()->id,
             'title' => $request->title,
             'slug' => $slug,
             'sort_description' => Str::limit(strip_tags($request->body), 100, '...'),
@@ -55,7 +56,9 @@ class DashboardController extends Controller
     public function delete($id)
     {
         $post = Post::find($id);
-        Storage::delete('public/'.$post->image);
+        if ($post->image !== 'image/default.jpg') {
+            Storage::delete('public/'.$post->image);
+        }
         $post->delete();
 
         return redirect()->back()->with('success', 'post has been deleted!');
@@ -80,8 +83,10 @@ class DashboardController extends Controller
         ]);
 
         if ($request->file('image')) {
-            if ($request->oldImage) {
-                Storage::delete('public/'.$request->oldImage);
+            if ($request->oldImage !== 'image/default.jpg') {
+                if ($request->oldImage) {
+                    Storage::delete('public/'.$request->oldImage);
+                }
             }
             $path = Storage::disk('local')->put('public/image', $request->file('image'));
             $image = explode('/', $path);
